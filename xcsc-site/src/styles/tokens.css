@@ -1,0 +1,80 @@
+/* ============================================================
+   XCSC — Design Tokens
+   Base system: Atlantic.vc (midnight observatory)
+   Layer quality: Resend (hairline borders, no shadows)
+   ============================================================ */
+
+:root {
+  /* ---- Surfaces (stepped charcoal, no shadows) ---- */
+  --surface-void: #06070a; /* page canvas — cool-tinted near-black */
+  --surface-carbon: #0d0d0f; /* elevated content blocks */
+  --surface-graphite: #131519; /* mid layer */
+  --surface-slate: #1a1d22; /* default panel */
+
+  /* ---- Text ---- */
+  --ice-white: #d8eaff; /* primary text + dominant border color */
+  --fog: #6c757f; /* secondary / muted body */
+  --steel: #565e66; /* tertiary */
+  --iron: #41464c; /* quietest */
+
+  /* ---- Accent ---- */
+  --cobalt: #1f58f2; /* highlight words only, never sentences */
+  --cobalt-dim: rgba(31, 88, 242, 0.16);
+  --signal: #ff4105; /* outlined CTA + active nav ONLY */
+
+  /* ---- Hairlines (wireframe-in-light) ---- */
+  --line: rgba(216, 234, 255, 0.12);
+  --line-strong: rgba(216, 234, 255, 0.24);
+  --line-faint: rgba(216, 234, 255, 0.06);
+
+  /* ---- Type ---- */
+  --font-display: 'Outfit', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sc: 'Noto Sans SC', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+
+  --text-caption: 13px;
+  --text-micro: 14px;
+  --text-body: 15px;
+  --text-lead: 18px;
+  --text-heading-sm: 24px;
+  --text-heading: 64px;
+  --text-display: 96px;
+
+  --track-caption: 0.16em;
+  --track-mono: 0.1em;
+  --track-display: -0.03em;
+  --track-heading: -0.02em;
+
+  /* ---- Spacing ---- */
+  --sp-4: 4px;
+  --sp-8: 8px;
+  --sp-12: 12px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --sp-80: 80px;
+  --sp-100: 100px;
+  --sp-148: 148px;
+  --sp-200: 200px;
+
+  /* ---- Layout ---- */
+  --shell: 1700px; /* 版心 */
+  --gutter: 48px;
+  --nav-h: 76px;
+
+  /* ---- Radius ---- */
+  --r-btn: 8px;
+  --r-tag: 8px;
+  --r-card: 16px;
+  --r-card-lg: 24px;
+  --r-pill: 999px;
+
+  /* ---- Motion ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-expo: cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 640ms;
+}

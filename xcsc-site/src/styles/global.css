@@ -1,0 +1,273 @@
+@import './tokens.css';
+
+/* ============================================================
+   Reset
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--surface-void);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--surface-void);
+  color: var(--ice-white);
+  font-family: var(--font-sc);
+  font-weight: 300;
+  font-size: var(--text-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::selection {
+  background: var(--cobalt);
+  color: #fff;
+}
+
+/* Scrollbar — thin, cool */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-void);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(216, 234, 255, 0.14);
+  border: 3px solid var(--surface-void);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(216, 234, 255, 0.28);
+}
+
+/* ============================================================
+   Layout primitives
+   ============================================================ */
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  position: relative;
+  padding-block: var(--sp-148);
+}
+
+/* Full-bleed hairline that spans the viewport */
+.rule {
+  height: 1px;
+  width: 100%;
+  background: var(--line);
+}
+
+/* ============================================================
+   Type utilities
+   ============================================================ */
+.mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: var(--track-caption);
+  font-size: var(--text-caption);
+  color: var(--fog);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: var(--track-display);
+  line-height: 1;
+  color: var(--ice-white);
+}
+
+.accent {
+  color: var(--cobalt);
+}
+
+.muted {
+  color: var(--fog);
+}
+
+/* ============================================================
+   Section label (numbered annotation + hairline)
+   ============================================================ */
+.slabel {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-16);
+  padding-bottom: var(--sp-16);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--sp-48);
+}
+
+.slabel__idx {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--cobalt);
+  letter-spacing: 0.06em;
+}
+
+.slabel__text {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--track-caption);
+  color: var(--fog);
+}
+
+.slabel__meta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  letter-spacing: var(--track-caption);
+  color: var(--iron);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-8);
+  padding: 11px 20px;
+  border: 1px solid var(--signal);
+  border-radius: var(--r-btn);
+  background: transparent;
+  color: var(--signal);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition:
+    background var(--dur-base) var(--ease-out-expo),
+    color var(--dur-base) var(--ease-out-expo),
+    transform var(--dur-fast) var(--ease-out-expo);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 65, 5, 0.1);
+}
+
+.btn-outline:active {
+  transform: scale(0.98);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-8);
+  padding: 11px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-btn);
+  color: var(--ice-white);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition:
+    border-color var(--dur-base) var(--ease-out-expo),
+    background var(--dur-base) var(--ease-out-expo),
+    transform var(--dur-fast) var(--ease-out-expo);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ice-white);
+  background: rgba(216, 234, 255, 0.04);
+}
+
+.btn-ghost:active {
+  transform: scale(0.98);
+}
+
+/* Focus rings — outline, never box-shadow */
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--cobalt);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   Tag
+   ============================================================ */
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-tag);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fog);
+  white-space: nowrap;
+}
+
+.tag--accent {
+  border-color: rgba(31, 88, 242, 0.5);
+  color: var(--cobalt);
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
