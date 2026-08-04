@@ -1,0 +1,9 @@
+{
+  "name": "design2",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd xcsc-site && npm install && npm run build && rm -rf \"$(cd .. && pwd)/dist\" && cp -r dist \"$(cd .. && pwd)\"",
+    "dev": "cd xcsc-site && npm run dev"
+  }
+}
