@@ -87,9 +87,9 @@
 
 .brandmark__sub {
   font-family: var(--font-mono);
-  font-size: var(--text-caption);
+  font-size: 15px;
   letter-spacing: 0.08em;
-  color: var(--steel);
+  color: #ffffff;
   padding-left: var(--sp-12);
   border-left: 1px solid var(--line);
 }
@@ -284,7 +284,7 @@
   align-items: center;
   gap: 10px;
   color: var(--fog);
-  font-size: var(--text-micro);
+  font-size: 16px;
   letter-spacing: 0.04em;
 }
 
@@ -480,24 +480,37 @@
 }
 
 .about__para {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.95;
   color: var(--fog);
 }
 
 .about__para:first-child {
   color: var(--ice-white);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.85;
+}
+
+/* 文案由深到浅渐隐，增强层次与余韵 */
+.about__para:nth-child(2) {
+  opacity: 0.9;
+}
+.about__para:nth-child(3) {
+  opacity: 0.78;
+}
+.about__para:nth-child(4) {
+  opacity: 0.66;
 }
 
 /* 技术方向列表 —— 用 divide 而非卡片 */
 .about__tracks {
-  border-top: 1px solid var(--line);
+  border-top: none;
+  margin-top: -240px;
+  min-width: 0;
 }
 
 .about__tracks-cap {
-  padding: var(--sp-16) 0 var(--sp-24);
+  padding: 0 0 var(--sp-24);
   color: var(--iron);
 }
 
@@ -539,7 +552,7 @@
 .about__track-desc {
   font-size: 14px;
   line-height: 1.7;
-  max-width: 42ch;
+  white-space: nowrap;
 }
 
 /* ---- 横向时间线 ---- */
@@ -623,6 +636,13 @@
 .tlcard__year {
   font-size: 40px;
   letter-spacing: -0.02em;
+  color: var(--ice-white);
+}
+
+/* 卡片标签（规划/成立/演练…）提亮：原本仅靠继承、边框过淡显得发糊 */
+.tlcard .tag {
+  color: var(--ice-white);
+  border-color: var(--line-strong);
 }
 
 .tlcard__node {
@@ -656,8 +676,14 @@
 }
 
 .tlcard__body {
-  font-size: 14.5px;
+  font-size: 15px;
   line-height: 1.85;
+  color: #c2ccd8;
+}
+
+/* 正文原本带 muted(--fog)，在深色卡片上对比不足、显得发糊，提亮到可读灰度 */
+.tlcard__body.muted {
+  color: #c2ccd8;
 }
 
 .tlcard__idx {

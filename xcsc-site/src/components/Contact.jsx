@@ -119,7 +119,7 @@ export default function Contact() {
             {brand.governedBy.join(' · ')}
           </div>
           <div className="ct__foot-right mono">
-            © {new Date().getFullYear()} {brand.abbr}
+            ©{new Date().getFullYear()} {brand.abbr}
           </div>
         </footer>
 

@@ -1,4 +1,4 @@
-# XCSC — 新疆科技学院网络安全战队官网
+# XCSC — 新疆科技学院网络安全社官网
 
 React + Vite 单页站点。暗色系，Atlantic.vc 观测站视觉体系 + Resend 发丝级边框质感，GSAP ScrollTrigger 驱动的电影感滚动叙事。
 

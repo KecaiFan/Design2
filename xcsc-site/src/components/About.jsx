@@ -66,7 +66,16 @@ export default function About() {
           const railEl = rail.current
           if (!el || !railEl) return
 
-          const distance = () => Math.max(0, railEl.scrollWidth - el.clientWidth)
+          // 轨道左缘相对 .tl 的偏移（= shell 左内边距 PL）。末卡需滚动到与首卡
+          // 对称的右内边距处（右缘距 .tl 右缘也为 PL），否则会被 overflow:hidden 裁掉。
+          let _n = railEl
+          let railLeft = 0
+          while (_n && _n !== el) {
+            railLeft += _n.offsetLeft
+            _n = _n.offsetParent
+          }
+          const distance = () =>
+            Math.max(0, railEl.scrollWidth - (el.clientWidth - 2 * railLeft))
 
           const tween = gsap.to(railEl, {
             x: () => -distance(),
@@ -129,7 +138,7 @@ export default function About() {
           </div>
 
           <aside className="about__tracks" aria-label="技术方向">
-            <p className="about__tracks-cap mono">TECHNICAL TRACKS · 05</p>
+            <p className="about__tracks-cap mono">TECHNICAL TRACKS · 07</p>
             {about.tracks.map((t, i) => (
               <div className="about__track" key={t.code}>
                 <span className="about__track-code mono">{String(i + 1).padStart(2, '0')}</span>

@@ -101,6 +101,22 @@ export default function Hero() {
           <a href={hero.secondaryCta.href} className="btn-ghost">
             {hero.secondaryCta.label}
           </a>
+          <a
+            href={hero.tertiaryCta.href}
+            className="btn-ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {hero.tertiaryCta.label}
+          </a>
+          <a
+            href={hero.quaternaryCta.href}
+            className="btn-ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {hero.quaternaryCta.label}
+          </a>
         </div>
       </div>
 

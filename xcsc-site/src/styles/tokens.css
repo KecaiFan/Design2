@@ -14,8 +14,8 @@
   /* ---- Text ---- */
   --ice-white: #d8eaff; /* primary text + dominant border color */
   --fog: #6c757f; /* secondary / muted body */
-  --steel: #565e66; /* tertiary */
-  --iron: #41464c; /* quietest */
+  --steel: #8b939b; /* tertiary */
+  --iron: #6e757d; /* quietest */
 
   /* ---- Accent ---- */
   --cobalt: #1f58f2; /* highlight words only, never sentences */
