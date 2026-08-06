@@ -32,12 +32,14 @@ export const hero = {
   eyebrow: '新疆科技学院 · 网络与信息技术中心',
   // 用 {} 包裹的词会被渲染成电蓝高亮
   headline: '把{漏洞}读成路，\n一题一长，步步更强。',
+  // 高亮词 → 跳转链接（彩蛋入口）。点击「漏洞」跳到 flag 配置页
+  accentLinks: { 漏洞: 'flag.html' },
   lede:
     'XCSC 是新疆科技学院由网络与信息技术中心指导的学生 CTF 社团。我们参加攻防竞赛与应急实战演练，在 Web、二进制、逆向、密码等方向训练，靠一场场解题和复盘慢慢积累。',
   primaryCta: { label: '加入我们', href: '#contact' },
   secondaryCta: { label: '查看战绩', href: '#projects' },
   tertiaryCta: { label: '资料分享', href: 'https://www.wolai.com/joEQHR5SYdE68tne4KWNUk', external: true },
-  quaternaryCta: { label: '社团靶场', href: 'https://www.baidu.com', external: true },
+  quaternaryCta: { label: '社团靶场', href: 'https://www.cyberstrikelab.com/', external: true },
 
   // 首屏底部读数条 [待核实]
   readouts: [

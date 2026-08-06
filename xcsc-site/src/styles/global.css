@@ -29,7 +29,9 @@ body {
   font-weight: 300;
   font-size: var(--text-body);
   line-height: 1.6;
-  overflow-x: hidden;
+  /* 用 clip 而非 hidden：hidden 会把 body 变成滚动容器(overflow-y 被算成 auto)，
+     导致 window.scrollTo 失效、返回顶部只移一点点。clip 只裁剪不创建滚动容器。 */
+  overflow-x: clip;
 }
 
 img,
@@ -132,6 +134,37 @@ ul {
 
 .accent {
   color: var(--cobalt);
+}
+
+/* 可点击的高亮词（彩蛋入口）：保留电蓝高亮，加可点击与聚焦反馈 */
+.accent--link {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  transition: color var(--dur-fast) var(--ease-out-expo);
+}
+
+.accent--link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.04em;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.4;
+  transition: opacity var(--dur-fast) var(--ease-out-expo);
+}
+
+.accent--link:hover::after,
+.accent--link:focus-visible::after {
+  opacity: 1;
+}
+
+.accent--link:focus-visible {
+  outline: 2px solid var(--ice-white);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 .muted {

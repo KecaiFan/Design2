@@ -215,6 +215,48 @@
   z-index: 1;
 }
 
+/* 右上角北京时间读数 */
+.hero__clock {
+  position: absolute;
+  top: calc(var(--nav-h) + 28px);
+  right: var(--gutter);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  pointer-events: none;
+  text-align: right;
+}
+
+.hero__clock-k {
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  color: var(--steel);
+  text-transform: uppercase;
+}
+
+.hero__clock-v {
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  color: var(--ice-white);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 18px rgba(56, 130, 255, 0.25);
+}
+
+.hero__clock-date {
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--fog);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+  .hero__clock-v { font-size: 24px; }
+  .hero__clock-k { font-size: 12px; }
+  .hero__clock-date { font-size: 13px; }
+}
+
 .hero__corner {
   position: absolute;
   width: 16px;
@@ -1191,5 +1233,51 @@
   .ct__row {
     grid-template-columns: 78px 1fr 16px;
     gap: var(--sp-16);
+  }
+}
+
+/* ---- 返回顶部悬浮按钮 ---- */
+.to-top {
+  position: fixed;
+  right: var(--sp-32);
+  bottom: var(--sp-32);
+  z-index: 60;
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line-strong);
+  background: var(--cobalt);
+  color: var(--ice-white);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity var(--dur-base) var(--ease-out-expo),
+    transform var(--dur-base) var(--ease-out-expo),
+    background var(--dur-fast) ease;
+}
+.to-top.is-shown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+.to-top:hover {
+  background: #2f6bff;
+}
+.to-top:focus-visible {
+  outline: 2px solid var(--ice-white);
+  outline-offset: 2px;
+}
+@media (max-width: 720px) {
+  .to-top {
+    right: var(--sp-16);
+    bottom: var(--sp-16);
+    width: 46px;
+    height: 46px;
   }
 }

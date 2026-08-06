@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import ParticleField from './ParticleField'
+import Clock from './Clock'
 import { hero, brand } from '../content/site'
 import { parseAccent, splitLines } from '../lib/text'
 
@@ -75,6 +76,8 @@ export default function Hero() {
         <span className="hero__corner hero__corner--br" />
       </div>
 
+      <Clock />
+
       <div className="hero__inner shell">
         <p className="hero__eyebrow mono">
           <span className="hero__pip" aria-hidden="true" />
@@ -84,7 +87,7 @@ export default function Hero() {
         <h1 className="hero__title display">
           {lines.map((line, i) => (
             <span className="hero__line" key={i}>
-              <span className="hero__line-inner">{parseAccent(line)}</span>
+              <span className="hero__line-inner">{parseAccent(line, hero.accentLinks)}</span>
             </span>
           ))}
         </h1>

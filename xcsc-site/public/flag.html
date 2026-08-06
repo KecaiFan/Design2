@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>XCSC — 配置</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=JetBrains+Mono:wght@300;400;500&family=Noto+Sans+SC:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --surface-void: #06070a;
+        --surface-carbon: #0d0d0f;
+        --surface-slate: #1a1d22;
+        --ice-white: #d8eaff;
+        --fog: #6c757f;
+        --steel: #8b939b;
+        --cobalt: #1f58f2;
+        --line: rgba(216, 234, 255, 0.12);
+        --line-strong: rgba(216, 234, 255, 0.24);
+        --font-display: 'Outfit', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+        --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background: var(--surface-void);
+        color: var(--ice-white);
+        font-family: var(--font-display);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+      }
+
+      .panel {
+        width: 100%;
+        max-width: 640px;
+        background: var(--surface-carbon);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 40px;
+      }
+
+      .eyebrow {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--steel);
+        margin-bottom: 20px;
+      }
+
+      .title {
+        font-size: 28px;
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+        color: var(--fog);
+        margin-bottom: 32px;
+        line-height: 1.6;
+      }
+
+      .config {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--surface-slate);
+        overflow: hidden;
+      }
+
+      .config__row {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .config__row:last-child {
+        border-bottom: none;
+      }
+
+      .config__key {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        color: var(--steel);
+        min-width: 88px;
+      }
+
+      .config__val {
+        font-family: var(--font-mono);
+        font-size: 15px;
+        color: var(--ice-white);
+        word-break: break-all;
+      }
+
+      .config__val.is-code {
+        color: var(--cobalt);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <div class="eyebrow">XCSC · config</div>
+      <h1 class="title">Code</h1>
+      <p class="subtitle">这是站点里的一个彩蛋页面，下面的字段记录了一份有趣的编码。</p>
+
+      <div class="config">
+        <div class="config__row">
+          <span class="config__key">code</span>
+          <span class="config__val is-code">ZmxhZ3t3ZWxjb21lX3RvX1hDU0N9</span>
+        </div>
+        <div class="config__row">
+          <span class="config__key">encoding</span>
+          <span class="config__val">base64</span>
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>
